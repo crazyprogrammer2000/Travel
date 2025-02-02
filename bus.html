@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasing Voyages - Bus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/bus.css">
+</head>
+
+<body>
+  
+    <header>
+
+        <nav>
+      
+          <h4>Chasing Voyages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="packages.html">Travel Packages</a></li>
+            <li><a href="flight.html">Flight</a></li>
+            <li><a href=#>Bus</a></li>
+            <li><a href="hotel.html">Hotel</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <i class="bi bi-three-dots"></i>
+        </nav> 
+        <div class="content">
+          <div class="trip_box">
+            <div class="search_box">
+              <div class="card">
+                <h3>From:</h3>
+                <input type="text" placeholder="Source">
+              </div>
+              <div class="card">
+                <h3>To:</h3>
+                <input type="text" placeholder="Destination">
+              </div>
+              <div class="card">
+                <h3>Date:</h3>
+                <input type="date">
+              </div>
+              <form action="">
+               <button type="submit">Search Offers</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      
+      <div class="container">
+        <!-- Sidebar (Filters) -->
+        <div class="sidebar">
+            <h3>Filter Busess</h3>
+    
+        <div class="filter">
+            <label for="roadway">Bus</label>
+            <select id="roadway">
+                <option value="">All Buses</option>
+                <option value="ordinary">Ordinary</option>
+                <option value="sleeper">Sleeper</option>
+                <option value="acsleeper">AC Sleeper</option>
+            </select>
+        </div>
+    
+        <div class="filter">
+            <label for="price">Max Price (&#8377;)</label>
+            <input type="number" id="price" placeholder="Enter max price">
+        </div>
+    
+        <div class="filter">
+            <label for="departure">Departure Time</label>
+            <input type="time" id="departure">
+        </div>
+    
+            <button onclick="filterResults()">Apply Filters</button>
+        </div>
+    
+        <!-- Main Content (Bus Listings) -->
+        <div class="main-content">
+            <div class="bus-card">
+                <h4>Ordinary - 7066</h4>
+                <p>From: Mumbai | To: Ratnagiri</p>
+                <p>Price: &#8377; 700</p>
+                <p>Departure: 10:00 AM</p>
+                <button class="book-now">Book Now</button>
+            </div>
+    
+            <div class="bus-card">
+                <h4>AC Sleeper - 7600</h4>
+                <p>From: Mumbai | To: Kolhapur</p>
+                <p>Price: &#8377; 1,000</p>
+                <p>Departure: 2:00 PM</p>
+                <button class="book-now">Book Now</button>
+            </div>
+    
+            <div class="bus-card">
+              <h4> Sleeper - 7125</h4>
+              <p>From: Mumbai | To: Alibaug</p>
+              <p>Price: &#8377; 350</p>
+              <p>Departure: 10:00 AM</p>
+              <button class="book-now">Book Now</button>
+            </div>
+    
+          <div class="bus-card">
+              <h4>AC Sleeper - 7501</h4>
+              <p>From: Mumbai | To: Shirdi</p>
+              <p>Price: &#8377; 500</p>
+              <p>Departure: 10:30 AM</p>
+              <button class="book-now">Book Now</button>
+          </div>
+    
+          <div class="bus-card">
+              <h4>AC Sleeper - 7424</h4>
+              <p>From: Mumbai | To: Nagpur</p>
+              <p>Price: &#8377; 2,000</p>
+              <p>Departure: 11:00 AM</p>
+              <button class="book-now">Book Now</button>
+          </div>
+    
+          <div class="bus-card">
+            <h4>Ordinary - 7042</h4>
+            <p>From: Mumbai | To: Pune</p>
+            <p>Price: &#8377; 400</p>
+            <p>Departure: 11:30 AM</p>
+            <button class="book-now">Book Now</button>
+          </div>
+    
+        <div class="bus-card">
+            <h4>AC Sleeper - 7661</h4>
+            <p>From: Mumbai | To: Udgir</p>
+            <p>Price: &#8377; 1,550</p>
+            <p>Departure: 12:30 PM</p>
+            <button class="book-now">Book Now</button>
+        </div>
+    
+        <div class="bus-card">
+            <h4>AC Sleeper - 7750</h4>
+            <p>From: Mumbai | To: Belgaum</p>
+            <p>Price: &#8377; 1,600</p>
+            <p>Departure: 1:00 PM</p>
+            <button class="book-now">Book Now</button>
+        </div>
+    
+        <div class="bus-card">
+          <h4>Ordinary - 7023</h4>
+          <p>From: Mumbai | To: Revdanda</p>
+          <p>Price: &#8377; 500</p>
+          <p>Departure: 1:50 PM</p>
+          <button class="book-now">Book Now</button>
+        </div>
+    
+      <div class="flight-card">
+          <h4>AC Sleeper - 7628</h4>
+          <p>From: Mumbai | To: Murud/p>
+          <p>Price: &#8377; 650</p>
+          <p>Departure: 2:45 PM</p>
+          <button class="book-now">Book Now</button>
+      </div>
+    
+      <div class="flight-card">
+          <h4>Ordinary - 7002</h4>
+          <p>From: Mumbai | To: Alibaug</p>
+          <p>Price: &#8377; 300</p>
+          <p>Departure: 4:00 PM</p>
+          <button class="book-now">Book Now</button>
+      </div>
+    
+      </div>
+    </div>
+    
+    <footer>
+      <ul>
+       <li>&copy; 2025 Chasing Voyages. All Rights Reserved.</li>
+       <li>Contact Us: chasingvoyages@gmail.com</li>
+       <li>Developed by: Mr. Sarvadnya A. Tarkar</li>
+      </ul>
+    </footer>
+  
+<script src="/js/travel.js"></script>
+</body>
+
+</html>

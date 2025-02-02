@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasing Voyages - Flights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/flight.css">
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+  
+      <h4>Chasing Voyages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="packages.html">Travel Packages</a></li>
+        <li><a href=#>Flight</a></li>
+        <li><a href="bus.html">Bus</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <i class="bi bi-three-dots"></i>
+    </nav> 
+    <div class="content">
+      <div class="trip_box">
+        <div class="search_box">
+          <div class="card">
+            <h3>From:</h3>
+            <input type="text" placeholder="Source">
+          </div>
+          <div class="card">
+            <h3>To:</h3>
+            <input type="text" placeholder="Destination">
+          </div>
+          <div class="card">
+            <h3>Date:</h3>
+            <input type="date">
+          </div>
+          <form action="">
+           <button type="submit">Search Offers</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+  <div class="container">
+    <!-- Sidebar (Filters) -->
+    <div class="sidebar">
+        <h3>Filter Flights</h3>
+
+    <div class="filter">
+        <label for="airline">Airline</label>
+        <select id="airline">
+            <option value="">All Airlines</option>
+            <option value="airindia">Air India</option>
+            <option value="emirates">Indigo</option>
+            <option value="britishairways">Vistara</option>
+        </select>
+    </div>
+
+    <div class="filter">
+        <label for="price">Max Price (&#8377;)</label>
+        <input type="number" id="price" placeholder="Enter max price">
+    </div>
+
+    <div class="filter">
+        <label for="departure">Departure Time</label>
+        <input type="time" id="departure">
+    </div>
+
+        <button onclick="filterResults()">Apply Filters</button>
+    </div>
+
+    <!-- Main Content (Flight Listings) -->
+    <div class="main-content">
+        <div class="flight-card">
+            <h4>✈ Air India - AI-8911</h4>
+            <p>From: Mumbai | To: Lucknow</p>
+            <p>Price: &#8377; 6,500</p>
+            <p>Departure: 10:00 AM</p>
+            <button class="book-now">Book Now</button>
+        </div>
+
+        <div class="flight-card">
+            <h4>✈ Air India - AI-7451</h4>
+            <p>From: Mumbai | To: Hyderabad</p>
+            <p>Price: &#8377; 5,900</p>
+            <p>Departure: 2:00 PM</p>
+            <button class="book-now">Book Now</button>
+        </div>
+
+        <div class="flight-card">
+          <h4>✈ Air India - AI-2455</h4>
+          <p>From: Mumbai | To: Varanasi</p>
+          <p>Price: &#8377; 7,500</p>
+          <p>Departure: 10:00 AM</p>
+          <button class="book-now">Book Now</button>
+        </div>
+
+      <div class="flight-card">
+          <h4>✈ Vistara - AI-6501</h4>
+          <p>From: Mumbai | To: Srinagar</p>
+          <p>Price: &#8377; 7,700</p>
+          <p>Departure: 10:30 AM</p>
+          <button class="book-now">Book Now</button>
+      </div>
+
+      <div class="flight-card">
+          <h4>&#9992; Indigo - 6E-1524</h4>
+          <p>From: Mumbai | To: Jaipur</p>
+          <p>Price: &#8377; 4,900</p>
+          <p>Departure: 11:00 AM</p>
+          <button class="book-now">Book Now</button>
+      </div>
+
+      <div class="flight-card">
+        <h4>&#9992; Air India - AI-2142</h4>
+        <p>From: Mumbai | To: Port Blair</p>
+        <p>Price: &#8377; 8,500</p>
+        <p>Departure: 11:30 AM</p>
+        <button class="book-now">Book Now</button>
+      </div>
+
+    <div class="flight-card">
+        <h4>&#9992; Indigo - 6E-5061</h4>
+        <p>From: Mumbai | To: Cochin</p>
+        <p>Price: &#8377; 7,550</p>
+        <p>Departure: 12:30 PM</p>
+        <button class="book-now">Book Now</button>
+    </div>
+
+    <div class="flight-card">
+        <h4>&#9992; Air India - AI-1720</h4>
+        <p>From: Mumbai | To: Bagdogra</p>
+        <p>Price: &#8377; 6,900</p>
+        <p>Departure: 1:00 PM</p>
+        <button class="book-now">Book Now</button>
+    </div>
+
+    <div class="flight-card">
+      <h4>&#9992; Air India - AI-2028</h4>
+      <p>From: Mumbai | To: Chennai</p>
+      <p>Price: &#8377; 5,500</p>
+      <p>Departure: 1:50 PM</p>
+      <button class="book-now">Book Now</button>
+    </div>
+
+  <div class="flight-card">
+      <h4>&#9992; Indigo - 6E-5017</h4>
+      <p>From: Mumbai | To: Kolkata</p>
+      <p>Price: &#8377; 7,000</p>
+      <p>Departure: 2:45 PM</p>
+      <button class="book-now">Book Now</button>
+  </div>
+
+  <div class="flight-card">
+      <h4>&#9992; Air India - AI-1218</h4>
+      <p>From: Mumbai | To: Bangalore</p>
+      <p>Price: &#8377; 5,000</p>
+      <p>Departure: 4:00 PM</p>
+      <button class="book-now">Book Now</button>
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <ul>
+   <li>&copy; 2025 Chasing Voyages. All Rights Reserved.</li>
+   <li>Contact Us: chasingvoyages@gmail.com</li>
+   <li>Developed by: Mr. Sarvadnya A. Tarkar</li>
+  </ul>
+</footer>
+
+
+<script src="/js/travel.js"></script>
+</body>
+
+</html>

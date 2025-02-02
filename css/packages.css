@@ -1,0 +1,169 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #353839;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header nav h4 {
+    color: #e6f5f0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e6f5f0;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #544c4c;
+}
+
+header nav .bi-three-dots {
+    display: none;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Grid layout for 3 rows and 4 cards per row */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling for each card */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    height: auto;
+}
+
+.card button{
+    background-color: #0d0d0e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+}
+
+.card button:hover{
+    background-color: #2d3239;
+}
+
+/* Style for details and summary */
+details {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+summary {
+    background-color: #161615;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+}
+
+summary:hover {
+    background-color: #38392f;
+}
+
+details p {
+    margin-top: 10px;
+    color: #555;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row for small screens */
+    }
+}
+
+footer {
+    background: #535353;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    bottom: 0;
+} 
+
+ul{
+    display: inline;
+    margin: 40px;
+    text-align: center;
+}

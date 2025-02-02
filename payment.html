@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasing Voyages - Payment Portal</title>
+    <link rel="stylesheet" href="/css/payment.css">
+</head>
+<body>
+    
+    <header>
+
+        <nav>
+      
+          <h4>Chasing Voyages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="packages.html">Travel Packages</a></li>
+            <li><a href="flight.html">Flight</a></li>
+            <li><a href="bus.html">Bus</a></li>
+            <li><a href="hotel.html">Hotel</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <i class="bi bi-three-dots"></i>
+        </nav> 
+        <p>Payment Portal</p>
+    </header>
+    
+    <div class="payment-container">
+        <div class="booking-form">
+            <h3>Select Booking Type</h3>
+            <select id="bookingType">
+                <option value="flight">Flight</option>
+                <option value="hotel">Hotel</option>
+                <option value="bus">Bus</option>
+            </select>
+
+            <h3>Enter Number of Passengers/Rooms</h3>
+            <input type="number" id="numPassengers" min="1" value="1">
+
+            <h3>Fare per Person/Room</h3>
+            <input type="text" id="fare" value="500" readonly>
+
+            <h3>Total Amount</h3>
+            <input type="text" id="totalAmount" value="500" readonly>
+
+            <button id="calculateFare">Calculate Fare</button>
+            <button id="payNow">Pay Now</button>
+        </div>
+
+        <div id="confirmationMessage" class="hidden">
+            <h2>✅ Booking Successful!</h2>
+            <p id="bookingDetails"></p>
+            <button onclick="window.location.reload()">New Booking</button>
+        </div>
+    </div>
+
+    <div class="note">
+        <p><u>Note:</u></p>
+        <ul class="items">
+            <li>1. Acknowledge Receipt: Verify the ticket's receipt at all times. The customer is reassured by a prompt acknowledgement of the ticket.</li>
+            <li>2. Recognize the Problem: To properly comprehend the customer's request or problem, attentively read the ticket. To be sure you have all the information, ask for more explanation if needed.</li>
+            <li>3. Be Professional and Polite: Even if the consumer is upset, keep your conversation courteous and professional.</li>
+            <li>4. Follow Up Right Away: Answer within the predetermined window of time. Customers may become dissatisfied due to delays.</li>
+            <li>5. Offer Explicit Solutions: Provide solutions that are precise, succinct, and useful. Provide updates and be open about the process if the solution takes some time.</li>
+            <li>6. Use the Ticketing System Correctly: To ensure accurate tracking of the system, make sure all interactions, responses, and updates are recorded.</li>
+            <li>7. Check the Resolution: After the problem has been fixed, check with the client to make sure they are happy with the outcome. If more help is required, provide it.</li>
+        </ul>
+    </div>
+    
+    <footer>
+      <ul>
+       <li>&copy; 2025 Chasing Voyages. All Rights Reserved.</li>
+       <li>Contact Us: chasingvoyages@gmail.com</li>
+       <li>Developed by: Mr. Sarvadnya A. Tarkar</li>
+      </ul>
+    </footer>
+
+    <script>
+        document.getElementById('calculateFare').addEventListener('click', function() {
+            let numPassengers = document.getElementById('numPassengers').value;
+            let fare = document.getElementById('fare').value;
+            let totalAmount = numPassengers * fare;
+            
+            document.getElementById('totalAmount').value = totalAmount;
+    
+            // Show confirmation message
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+            document.getElementById('bookingDetails').textContent = `Booking Type: ${document.getElementById('bookingType').value} | Passengers/Rooms: ${numPassengers} | Total Amount: ₹${totalAmount}`;
+            
+            // Hide the form
+            document.querySelector('.booking-form').style.display = 'none';
+        });
+    
+        document.getElementById('payNow').addEventListener('click', function() {
+            alert("Payment Succesful");
+            // Add payment gateway integration here
+        });
+    </script>
+    
+
+</body>
+</html>
