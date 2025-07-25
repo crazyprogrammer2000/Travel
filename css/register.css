@@ -16,6 +16,7 @@ header nav {
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 header nav h4 {
@@ -29,6 +30,7 @@ header nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -57,44 +59,44 @@ header nav .bi-three-dots {
     margin: auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .form-container {
+.form-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-  }
+}
   
-  .form-box {
+.form-box {
     width: 48%;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  h2 {
+h2 {
     font-size: 24px;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
-  }
+}
   
-  form {
+form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+}
   
-  input[type="email"], input[type="password"] {
+input[type="email"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
+}
   
-  button {
+button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -103,27 +105,27 @@ header nav .bi-three-dots {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
   
-  button:hover {
+button:hover {
     background-color: #34383d;
-  }
+}
   
-  #google-signin-btn {
+#google-signin-btn {
     background-color: #151414;
     padding: 10px;
-    width: 950px;
+    width: 100%; /* changed from 950px */
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
     margin-top: 20px;
-  }
+}
   
-  #google-signin-btn:hover {
+#google-signin-btn:hover {
     background-color: #3f312f;
-  }
+}
 
 footer {
     background: #535353;
@@ -136,8 +138,47 @@ footer {
     bottom: 0;
 }
 
-ul{
+ul {
     display: inline;
     margin: 40px;
     text-align: center;
+}
+
+/* ----------- Mobile Responsive CSS ----------- */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-box {
+        width: 100%;
+    }
+
+    .auth-container {
+        padding: 20px;
+    }
+
+    #google-signin-btn {
+        width: 100%;
+    }
+
+    header nav .bi-three-dots {
+        display: block;
+    }
+
+    ul {
+        margin: 20px;
+    }
 }
