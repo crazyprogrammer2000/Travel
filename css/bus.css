@@ -16,6 +16,7 @@ header nav {
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 header nav h4 {
@@ -29,6 +30,7 @@ header nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -62,6 +64,7 @@ header .content {
 }
 
 header .content .cont_box {
+    max-width: 100%;
     width: 500px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -109,6 +112,8 @@ header .trip_box .search_box {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header .trip_box .search_box .card {
@@ -142,8 +147,9 @@ header .trip_box .search_box form button:hover {
 
 .container {
     display: flex;
-    flex-direction: row; /* Sidebar & Main Content Side by Side */
+    flex-direction: row;
     height: 100vh;
+    flex-wrap: wrap;
 }
 
 .sidebar {
@@ -212,7 +218,6 @@ button:hover {
     color: #141414;
 }
 
-
 .book-now {
     background: #141214;
     color: white;
@@ -239,19 +244,49 @@ footer {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        height: auto;
     }
 
     .sidebar {
         width: 100%;
         position: relative;
+        height: auto;
     }
 
     .main-content {
         padding: 10px;
     }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    header .content .cont_box {
+        width: 100%;
+        padding: 15px;
+    }
+
+    header .trip_box .search_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .trip_box .search_box form button {
+        width: 100%;
+    }
 }
 
-ul{
+ul {
     display: inline;
     margin: 40px;
     text-align: center;
