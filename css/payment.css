@@ -1,11 +1,12 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #353839;
-    margin: auto;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
@@ -15,12 +16,14 @@ header nav {
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 header nav h4 {
     color: #e6f5f0;
     font-weight: bold;
     font-size: 24px;
+    margin-bottom: 10px;
 }
 
 header nav ul {
@@ -28,10 +31,12 @@ header nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header nav ul li {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 header nav ul li a {
@@ -46,95 +51,168 @@ header nav ul li a:hover {
     color: #544c4c;
 }
 
+/* Hide three dots (hamburger menu placeholder) on large screens */
 header nav .bi-three-dots {
     display: none;
 }
 
-header p{
+h1 {
+    color: #fff;
     text-align: center;
-    color: white;
-    font-size: 30px;
-    font-weight: 100;
-    padding: 15px;
-}
-
-.payment-container {
-    width: 40%;
-    height: 100%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
-    margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Grid layout for 3 rows and 4 cards per row */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-input, select, button {
-    padding: 8px;
-    font-size: 16px;
-    margin: 5px 0;
+/* Styling for each card */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-button {
-    background: #332533;
-    color: #dbc0ce;
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card button {
+    background-color: #0d0d0e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
     border: none;
+}
+
+.card button:hover {
+    background-color: #2d3239;
+}
+
+/* Style for details and summary */
+details {
+    margin-top: 10px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #363a3e;
-    color: #e6f5f0;
-}
-
-.hidden {
-    display: none;
-    height: 100px;
-}
-
-#confirmationMessage {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f4f2ef;
-    color: #414039;
+summary {
+    background-color: #161615;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
 }
 
-.note p u{
-    display: block;
-    text-align: center;
-    color: #f4f2ef;
-    font-weight: 500;
+summary:hover {
+    background-color: #38392f;
 }
 
-.note .items{
-    text-align: center;
-    color: #e6f5f0;
-    font-weight: 300;
+details p {
+    margin-top: 10px;
+    color: #555;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
+/* Footer */
 footer {
-    display: block;
     background: #535353;
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
     width: 100%;
-    margin-top: auto; /* pushes footer to bottom */
+    margin-top: 40px;
 }
 
-ul{
+/* Inline list fix */
+ul {
     display: inline;
     margin: 40px;
     text-align: center;
+}
+
+/* Media Queries - Responsive Design */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    header nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        background-color: #2d3239;
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    header nav h4 {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card button {
+        font-size: 14px;
+    }
+
+    summary {
+        font-size: 14px;
+    }
 }
