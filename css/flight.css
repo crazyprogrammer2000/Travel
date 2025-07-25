@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+/* ---------- HEADER ---------- */
 header {
     width: 100%;
     height: auto;
@@ -16,6 +17,7 @@ header nav {
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 header nav h4 {
@@ -48,9 +50,10 @@ header nav ul li a:hover {
 }
 
 header nav .bi-three-dots {
-    display: none;
+    display: none; /* You can use this for mobile menu toggle */
 }
 
+/* ---------- CONTENT BANNER ---------- */
 header .content {
     position: relative;
     width: 100%;
@@ -62,7 +65,8 @@ header .content {
 }
 
 header .content .cont_box {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
@@ -96,10 +100,12 @@ header .content .cont_box button:hover {
     background-color: #333333;
 }
 
+/* ---------- TRIP BOX ---------- */
 header .trip_box {
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 header .trip_box .search_box {
@@ -108,13 +114,18 @@ header .trip_box .search_box {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
+    max-width: 800px;
 }
 
 header .trip_box .search_box .card {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    flex: 1 1 150px;
+    min-width: 120px;
 }
 
 header .trip_box .search_box .card h3 {
@@ -128,7 +139,7 @@ header .trip_box .search_box form button {
     background-color: #000000;
     color: #ffffff;
     height: 45px;
-    width: 125px;
+    width: 100%;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -140,9 +151,10 @@ header .trip_box .search_box form button:hover {
     background-color: #333333;
 }
 
+/* ---------- CONTAINER ---------- */
 .container {
     display: flex;
-    flex-direction: row; /* Sidebar & Main Content Side by Side */
+    flex-direction: row;
     height: 100vh;
 }
 
@@ -171,7 +183,8 @@ label {
     font-weight: bold;
 }
 
-select, input {
+select,
+input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -179,6 +192,7 @@ select, input {
     border-radius: 5px;
 }
 
+/* ---------- BUTTONS ---------- */
 button {
     width: 100%;
     padding: 10px;
@@ -194,6 +208,7 @@ button:hover {
     background: #544c4c;
 }
 
+/* ---------- MAIN CONTENT ---------- */
 .main-content {
     flex: 1;
     padding: 20px;
@@ -212,7 +227,6 @@ button:hover {
     color: #141414;
 }
 
-
 .book-now {
     background: #141214;
     color: white;
@@ -226,6 +240,7 @@ button:hover {
     background: #535458;
 }
 
+/* ---------- FOOTER ---------- */
 footer {
     background: #535353;
     color: white;
@@ -236,6 +251,7 @@ footer {
     bottom: 0;
 }
 
+/* ---------- MOBILE STYLES ---------- */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -249,10 +265,51 @@ footer {
     .main-content {
         padding: 10px;
     }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .content .cont_box h1 {
+        font-size: 24px;
+    }
+
+    header .content .cont_box p {
+        font-size: 14px;
+    }
 }
 
-ul{
-    display: inline;
-    margin: 40px;
-    text-align: center;
+/* ---------- EXTRA SMALL DEVICES ---------- */
+@media (max-width: 480px) {
+    header .content .cont_box {
+        padding: 15px;
+    }
+
+    header nav h4 {
+        font-size: 20px;
+    }
+
+    header .trip_box .search_box {
+        flex-direction: column;
+    }
+
+    ul {
+        display: block;
+        margin: 20px 0;
+        text-align: left;
+        padding-left: 20px;
+    }
 }
