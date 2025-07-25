@@ -16,6 +16,7 @@ header nav {
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 header nav h4 {
@@ -29,6 +30,8 @@ header nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header nav ul li {
@@ -62,7 +65,8 @@ header .content {
 }
 
 header .content .cont_box {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
@@ -109,6 +113,8 @@ header .trip_box .search_box {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header .trip_box .search_box .card {
@@ -124,7 +130,7 @@ header .trip_box .search_box .card h3 {
     color: #333333;
 }
 
-header .trip_box .search_box form button{
+header .trip_box .search_box form button {
     background-color: #000000;
     color: #ffffff;
     height: 45px;
@@ -136,12 +142,12 @@ header .trip_box .search_box form button{
     transition: background-color 0.3s ease;
 }
 
-header .trip_box .search_box form button:hover{
+header .trip_box .search_box form button:hover {
     background-color: #333333;
 }
 
 .offers {
-    width: 80%;
+    width: 90%;
     margin: 50px auto;
     text-align: center;
 }
@@ -166,7 +172,8 @@ header .trip_box .search_box form button:hover{
 }
 
 .offers .cards .card {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -217,8 +224,69 @@ footer {
     bottom: 0;
 } 
 
-ul{
+ul {
     display: inline;
     margin: 40px;
     text-align: center;
+} 
+
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .content .cont_box h1 {
+        font-size: 24px;
+    }
+
+    header .trip_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .trip_box .search_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offers .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offers .cards .card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav h4 {
+        font-size: 20px;
+    }
+
+    header .content .cont_box {
+        padding: 15px;
+    }
+
+    header .content .cont_box h1 {
+        font-size: 20px;
+    }
+
+    header .trip_box .search_box form button {
+        width: 100%;
+    }
+
+    .offers h1 {
+        font-size: 22px;
+    }
+
+    .offers p {
+        font-size: 14px;
+    }
 }
